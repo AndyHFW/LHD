@@ -4,5 +4,5 @@ window.onload = function(){
 
 function addText(){
 	var card = document.getElementById("cardText");
-	textarea.innerHTML += "test";
+	card.innerHTML = "test";
 }
