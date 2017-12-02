@@ -16,13 +16,42 @@
 	<nav>
 		<ul>
 			<li><a href="./index.html">Home</a></li>
-			<li><a href="./insertlink.html">Design</a></li>
+			<li><a href="./instructions.html">Instructions</a></li>
 		</ul>
 	</nav>
 </header>
 <body>
-	<p>
-		This website is designed to 
-	</p>
+	<div id="instructions">
+		<h1>Instructions</h1>
+		<p>
+			This website is designed to accommodate custom flashcard sets.
+		</p>
+		<hr>
+			<h2>Get Started:</h2>
+				<h3>Creating a flashcard file</h3>
+				<p>
+					A flashcard set consist of a text file with each question-answer pair
+					on a new line. Each question and answer should be separated by a tilde (~) character.
+					</br>
+					For example a set containing the two flashcards:
+				<pre>
+		Q1: How many sets are in the power set of 'A'?
+		A1: There are 2^|A| sets in the power set.
+		Q2: What is a Eulerian cycle?
+		A2: A graph cycle in which each edge is used exactly once.
+		
+		Should be formatted in the text file as:
+		<img src="SampleQuestions.png" alt="Sample Questions" id="sampleQuestions">
+				</pre>
+				</p>
+				<h3>Selecting your file</h3>
+				<pre>
+		Use the Choose File button to select your flashcard file
+		<img src="ChooseFile.png" alt="Choose File" id="chooseFile">
+			</pre>
+			<h3>Start practicing!</h3>
+			<h2><a href="./index.html">Try it now!</a>
+		<hr>
+	</div>
 </body>
 </html>

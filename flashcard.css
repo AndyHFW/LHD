@@ -27,6 +27,36 @@ nav ul li a:hover {
 	background-color: mediumaquamarine;
 }
 
+h1 {
+	display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+h3 { 
+    display: block;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
 body {
 	background-color: snow;
 }
@@ -90,4 +120,28 @@ body {
 
 .cardButtons {
 	font-size: 1.2em;
+}
+
+#instructions {
+	margin-left: 10px;
+}
+
+#sampleQuestions {
+	height: 75%;
+	width: 75%;
+	margin-top: 10px;
+	padding-bottom: 10px;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+}
+
+#chooseFile {
+	height: 30%;
+	width: 30%;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
 }
