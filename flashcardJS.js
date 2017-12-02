@@ -45,6 +45,11 @@ function previousQuestion(){
     
     if(previousIndex > -1){
         
+        //special case for when we first click the 'previous card' button
+        if(previousIndex === maxPreviousIndex-1){
+            previousIndex -= 1;
+        }
+        
         document.getElementById("cardText").innerHTML = previousCard[previousIndex][0];
         document.getElementById("cardAnswerText").innerHTML = previousCard[previousIndex][1];
         previousIndex -= 1;
@@ -54,6 +59,13 @@ function previousQuestion(){
 
 function nextPrevQuestion(){
     if(previousIndex < maxPreviousIndex-1){
+        
+        //special case for when we click the 'next card' button when 
+        //  we have reached the end of the previousCard array
+        if(previousIndex === -1){
+            previousIndex += 1;
+        }
+        
         previousIndex += 1;
         document.getElementById("cardText").innerHTML = previousCard[previousIndex][0];
         document.getElementById("cardAnswerText").innerHTML = previousCard[previousIndex][1];
