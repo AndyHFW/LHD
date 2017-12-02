@@ -1,16 +1,24 @@
 #cardHolder {
+	height: 300px;
 }
 
-#card {
-	height: 400px;
+#card, #cardAnswer {
+	height: 25%;
 	width: 50%;
 	font-size: 200%;
 	text-align:center;
 	border: 1px 1px 1px 1px;
 	border-style:solid;
 	margin-left: 25%;
+	padding-top: 12.5%;
+	position: absolute;
 }
 
-#cardText {
+/*#cardAnswer {
+	position: relative;
+	top: -100%;
+}*/
+
+/*#cardText, #cardAnswerText {
 	margin-top: 20%;
-}
+}*/
