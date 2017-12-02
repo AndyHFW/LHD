@@ -1,3 +1,33 @@
+header {
+	color: blue;
+}
+
+nav ul{
+	overflow: hidden;
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+nav ul li {
+	float: left;
+	/*margin-right: 10px;*/
+}
+
+nav ul li a {
+	display: inline-block;
+	color: #fff;
+	background-color: lightskyblue;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 5px 20px;
+}
+
+nav ul li a:hover {
+	color: #000;
+	background-color: mediumaquamarine;
+}
+
 .container{
 	height: 200px;
 	/*border-style: solid;*/
@@ -20,18 +50,19 @@
 	text-align:center;
 	border: 1px 1px 1px 1px;
 	border-style:solid;
+	border-radius: 25px;
 	top: 10%;
 	left: 25%;
 	display: table;
 	backface-visibility: hidden;
 }
 
-/*#cardAnswer {
-	height: 0px;
-	overflow: hidden;
-}*/
 
+.card .cardQuestion {
+	background: lightskyblue;
+}
 .card .cardAnswer {
+	background: mediumaquamarine;
 	transform: rotateY(180deg);
 }
 
@@ -42,4 +73,12 @@
 #cardText, #cardAnswerText {
 	display:table-cell;
 	vertical-align: middle;
+}
+
+#buttonTable {
+	margin: auto;
+}
+
+.cardButtons {
+	font-size: 1.2em;
 }

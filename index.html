@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Flashcards test</title>
+	<title>Flashcard test</title>
 	<meta name="author" content="Andy Wang"/>
 	<meta name="description" content="Testing flash cards"/>
 	<meta name="viewport" content="width=device-width" />
@@ -11,8 +11,14 @@
 	<script src="flashcardJS.js"></script>
 	<script src="jquery-3.2.1.min.js"></script>
 </head>
-<input type='file' accept='text/plain' onchange='openFile(event)'><br>
-<img id='output'>
+<header>
+	<nav>
+		<ul>
+			<li><a href="./index.html">Home</a></li>
+			<li><a href="./insertlink.html">Design</a></li>
+		</ul>
+	</nav>
+</header>
 <section class="container">
 	<div class="card">
 		<div class="cardQuestion">
@@ -24,8 +30,15 @@
 	</div>
 </section>
 <div id="buttonDiv">
-	<button type="button" onclick="flipCard()" id="flipCard">Flip Card</button>
-	<button type="button" onclick="showArray()" id="nextCard">Next Card</button>
+	<table id="buttonTable">
+		<tr>
+			<td><button type="button" onclick="flipCard()" id="flipCard" class="cardButtons">Flip Card</button></td>
+			<td><button type="button" onclick="selectQuestion()" id="nextCard" class="cardButtons">Next Card</button></td>
+		</tr>
+	</table>
 </div>
-<textarea id="test"></textarea>
+<div>
+	<input type='file' accept='text/plain' onchange='openFile(event)'><br>
+	<img id='output'>
+</div>
 </html>
