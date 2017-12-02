@@ -13,13 +13,13 @@ var openFile = function(event) {
       var text = reader.result;
       console.log(reader.result.substring(0, 200));
 	  questionArray = reader.result.split("\n");
-	  //document.getElementById("test").innerHTML += reader.result.substring(0, 200);
     };
     reader.readAsText(input.files[0]);
 	
   };
   
 function showArray() {
+	document.getElementById("test").innerHTML = questionArray.length;
 	for (var i = 0; i < questionArray.length; i++){
 		document.getElementById("test").innerHTML += questionArray[i] + "\n";
 	}
