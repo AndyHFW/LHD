@@ -4,7 +4,7 @@ var answerArray = [];
 var unUsedQuestions = [];
 var previousCard = [];
 var previousIndex = -1;
-var maxPreiousIndex = 0;
+var maxPreviousIndex = 0;
 
 window.onload = function(){
 }
@@ -53,7 +53,7 @@ function previousQuestion(){
 };
 
 function nextPrevQuestion(){
-    if(previousIndex < maxPreiousIndex-1){
+    if(previousIndex < maxPreviousIndex-1){
         previousIndex += 1;
         document.getElementById("cardText").innerHTML = previousCard[previousIndex][0];
         document.getElementById("cardAnswerText").innerHTML = previousCard[previousIndex][1];
@@ -65,7 +65,7 @@ function selectQuestion(){
 	if (document.getElementById("nextCard").innerHTML == "Start Session") document.getElementById("nextCard").innerHTML = "Next Card";
 	
     
-    if(previousIndex < maxPreiousIndex-1){
+    if(previousIndex < maxPreviousIndex-1){
         nextPrevQuestion();
     }else{
     
@@ -107,7 +107,7 @@ function selectQuestion(){
         //add the current element to the previousCard array
         previousCard.push(questionArray[index]);
         previousIndex += 1;
-        maxPreiousIndex += 1;
+        maxPreviousIndex += 1;
         
         //change the text of the question card to display the question that was randomly selected
         document.getElementById("cardText").innerHTML = randomElement;
