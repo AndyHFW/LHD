@@ -3,10 +3,11 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Flashcard test</title>
+	<title>LHD Flashcards</title>
 	<meta name="author" content="Andy Wang"/>
-	<meta name="description" content="Testing flash cards"/>
+	<meta name="description" content="Display custom flashcards."/>
 	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="reset.css">
 	<link rel="stylesheet" href="flashcard.css">
 	<script src="flashcardJS.js"></script>
 	<script src="jquery-3.2.1.min.js"></script>
@@ -19,26 +20,32 @@
 		</ul>
 	</nav>
 </header>
-<section class="container">
-	<div class="card">
-		<div class="cardQuestion">
-			<p id="cardText">Question</p>
+<body>
+	<section class="container">
+		<div class="card">
+			<div class="cardQuestion">
+				<p id="cardText">No Flashcards Available</p>
+			</div>
+			<div class="cardAnswer">
+				<p id="cardAnswerText">No Flashcards Available</p>
+			</div>
 		</div>
-		<div class="cardAnswer">
-			<p id="cardAnswerText">Answer</p>
+	</section>
+	<section>
+		<div id="buttonDiv">
+			<table id="buttonTable">
+				<tr>
+					<td><button type="button" onclick="flipCard()" id="flipCard" class="cardButtons">Flip Card</button></td>
+					<td><button type="button" onclick="previousCard()" id="previousCard" class="cardButtons">Previous Card</button></td>
+					<td><button type="button" onclick="selectQuestion()" id="nextCard" class="cardButtons">Start Session</button></td>
+				</tr>
+			</table>
 		</div>
-	</div>
-</section>
-<div id="buttonDiv">
-	<table id="buttonTable">
-		<tr>
-			<td><button type="button" onclick="flipCard()" id="flipCard" class="cardButtons">Flip Card</button></td>
-			<td><button type="button" onclick="selectQuestion()" id="nextCard" class="cardButtons">Next Card</button></td>
-		</tr>
-	</table>
-</div>
-<div>
-	<input type='file' accept='text/plain' onchange='openFile(event)'><br>
-	<img id='output'>
-</div>
+	</section>
+	<section>
+		<p>Please select a flashcard text file:</p>
+		<input type='file' accept='text/plain' onchange='openFile(event)'><br>
+		<img id='output'>
+	</section>
+</body>
 </html>

@@ -1,0 +1,11 @@
+What do the symbols '|' and ':' mean in set builder notation?~it means 'such that'
+How many sets are in the power set of 'A'?~there are 2^|A| sets in the power set
+What are the 3 main parts of mathematical induction?~Base case, Induction hypothesis, Induction step
+What does it mean for a function to be 'one-to-one'?~a function is 'one-to-one' if every element of its domain(x value) has a distinct image(y value)
+A,B,M are integers; When is A congruent to B(mod M)?~when M divids (b-a)
+Let A be a set; What does it mean for a relation on A^2 to be reflexive?~the relation must contain all the element pairs (x,y) where x=y
+Let a,b,c be integers; If a|b and b|c then....~a|c
+How is the lcm(a,b) calculated?~|a|x|b| / gcd(a,b)
+How many residue classes are there for modulo M?~there are M residue classes
+What is the factorial version of 'N choose K'?~N! / ( K! * (N-K)! )
+How do you convert the statement 'p -> q' into a logical expression?~not(p) or q
