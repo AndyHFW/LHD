@@ -10,6 +10,8 @@
 	<link rel="stylesheet" href="flashcard.css">
 	<script src="flashcardJS.js"></script>
 </head>
+<input type='file' accept='text/plain' onchange='openFile(event)'><br>
+<img id='output'>
 <div id="cardHolder">
 	<div id="card">
 		<p id="cardText">Question</p>
@@ -20,6 +22,7 @@
 </div>
 <div id="buttonDiv">
 	<button type="button" onclick="flipCard()" id="flipCard">Flip Card</button>
-	<button type="button" onclick="nextCard()" id="nextCard">Next Card</button>
+	<button type="button" onclick="showArray()" id="nextCard">Next Card</button>
 </div>
+<p id="test"></p>
 </html>
