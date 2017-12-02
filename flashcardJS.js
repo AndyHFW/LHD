@@ -2,6 +2,9 @@ var cardState = "question"
 var questionArray = [];
 var answerArray = [];
 var unUsedQuestions = [];
+var previousCard = [];
+var previousIndex = -1;
+var maxPreiousIndex = 0;
 
 window.onload = function(){
 }
@@ -38,49 +41,78 @@ function flipCard() {
 	else document.getElementById("previousCard").disabled = false;
 }
 */
-function previousCard() {
-	document.getElementById("cardText").innerHTML = arrayPlaceholder[returnState][0];
-	document.getElementById("cardAnswerText").innerHTML = arrayPlaceholder[returnState][1];
-	returnState--;
-	checkReturnState();	
-}
+function previousQuestion(){
+    
+    if(previousIndex > -1){
+        
+        document.getElementById("cardText").innerHTML = previousCard[previousIndex][0];
+        document.getElementById("cardAnswerText").innerHTML = previousCard[previousIndex][1];
+        previousIndex -= 1;
+    }
+    
+};
+
+function nextPrevQuestion(){
+    if(previousIndex < maxPreiousIndex-1){
+        previousIndex += 1;
+        document.getElementById("cardText").innerHTML = previousCard[previousIndex][0];
+        document.getElementById("cardAnswerText").innerHTML = previousCard[previousIndex][1];
+    }
+};
+
 
 function selectQuestion(){
 	if (document.getElementById("nextCard").innerHTML == "Start Session") document.getElementById("nextCard").innerHTML = "Next Card";
-	//if the array (that keeps track of the questions that have not been used), 
-	//  is empty, then repopulate with the index numbers 0 to N-1, 
-	//    where N is the length of the question array
-	if(unUsedQuestions.length === 0){
-		for(var i=0; i < questionArray.length;i++) {
-			unUsedQuestions[i]=i;
-		}
-	}
 	
-	//generate a random integer between 0 and N-1, where N is the length of unUsedQuestions
-	var randomIndex = Math.floor(Math.random() * (unUsedQuestions.length-1));
-
-	//use the random index to select an element from the questionArray
-	var randomElement = questionArray[unUsedQuestions[randomIndex]][0];
-	var answerElement = questionArray[unUsedQuestions[randomIndex]][1];
-	
-	//if unUsedQuestions array has more than 1 element
-	if(unUsedQuestions.length !== 1){
-		
-		//get the half of the array to the left of the element that was selected
-		var sliceA = unUsedQuestions.splice(0,randomIndex);
-		
-		//get the half of the array to the right of the element that was selected
-		var sliceB = unUsedQuestions.splice(1,unUsedQuestions.length);
-		
-		//reassign unUsedQuestions array so that the index that was used is no longer included
-		unUsedQuestions = sliceA.concat(sliceB);
-	}else{
-		
-		//set the unUsedQuestions array to nothing
-		unUsedQuestions = []
-	}
-	
-	//change the text of the question card to display the question that was randomly selected
-	document.getElementById("cardText").innerHTML = randomElement;
-	document.getElementById("cardAnswerText").innerHTML = answerElement;
+    
+    if(previousIndex < maxPreiousIndex-1){
+        nextPrevQuestion();
+    }else{
+    
+        //if the array (that keeps track of the questions that have not been used), 
+        //  is empty, then repopulate with the index numbers 0 to N-1, 
+        //    where N is the length of the question array
+        if(unUsedQuestions.length === 0){
+            for(var i=0; i < questionArray.length;i++) {
+                unUsedQuestions[i]=i;
+            }
+        }
+        
+        //generate a random integer between 0 and N-1, where N is the length of unUsedQuestions
+        var randomIndex = Math.floor(Math.random() * (unUsedQuestions.length-1));
+        var index = unUsedQuestions[randomIndex];
+    
+        //use the random index to select an element from the questionArray
+        var randomElement = questionArray[index][0];
+        var answerElement = questionArray[index][1];
+        
+                
+        //if unUsedQuestions array has more than 1 element
+        if(unUsedQuestions.length !== 1){
+            
+            //get the half of the array to the left of the element that was selected
+            var sliceA = unUsedQuestions.splice(0,randomIndex);
+            
+            //get the half of the array to the right of the element that was selected
+            var sliceB = unUsedQuestions.splice(1,unUsedQuestions.length);
+            
+            //reassign unUsedQuestions array so that the index that was used is no longer included
+            unUsedQuestions = sliceA.concat(sliceB);
+        }else{
+            
+            //set the unUsedQuestions array to nothing
+            unUsedQuestions = []
+        }
+        
+        //add the current element to the previousCard array
+        previousCard.push(questionArray[index]);
+        previousIndex += 1;
+        maxPreiousIndex += 1;
+        
+        //change the text of the question card to display the question that was randomly selected
+        document.getElementById("cardText").innerHTML = randomElement;
+        document.getElementById("cardAnswerText").innerHTML = answerElement;
+        
+        
+    }
 }
