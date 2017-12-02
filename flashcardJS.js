@@ -2,7 +2,7 @@ var cardState = "question"
 var questionArray = [];
 
 window.onload = function(){
-	document.getElementById("cardAnswer").style.visibility = "hidden";
+	//document.getElementById("cardAnswer").style.visibility = "hidden";
 }
 
 var openFile = function(event) {
@@ -25,14 +25,6 @@ function showArray() {
 	}
 }
 
-function flipCard(){
-	if (cardState == "question") {
-		document.getElementById("card").style.visibility = "hidden";
-		document.getElementById("cardAnswer").style.visibility = "visible";
-		cardState = "answer";
-	} else {
-		document.getElementById("card").style.visibility = "visible";
-		document.getElementById("cardAnswer").style.visibility = "hidden";
-		cardState = "question";
-	}
+function flipCard() {
+	$('.card').toggleClass('flipped');
 }
