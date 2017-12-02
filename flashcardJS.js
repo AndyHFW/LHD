@@ -26,8 +26,6 @@ function showArray() {
 }
 
 function flipCard(){
-	/*var card = document.getElementById("cardText");
-	card.innerHTML = "test";*/
 	if (cardState == "question") {
 		document.getElementById("card").style.visibility = "hidden";
 		document.getElementById("cardAnswer").style.visibility = "visible";
