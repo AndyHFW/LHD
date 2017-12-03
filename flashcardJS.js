@@ -5,6 +5,7 @@ var unUsedQuestions = [];
 var previousCard = [];
 var previousIndex = -1;
 var maxPreviousIndex = 0;
+var cardState = "question";
 
 window.onload = function(){
 }
@@ -33,7 +34,22 @@ var openFile = function(event) {
 }*/
 
 function flipCard() {
+	if (cardState == "question") {
+		cardState = "answer";
+		document.getElementById("cardAnswerText").style.visibility = "visible"; 
+		document.getElementById("flipCard").innerHTML = "See Question";
+	} else {
+		cardState = "question";
+		document.getElementById("flipCard").innerHTML = "See Answer";
+	}
 	$('.card').toggleClass('flipped');
+}
+
+function flipQuestion() {
+	if (cardState == "answer") {
+		document.getElementById("cardAnswerText").style.visibility = "hidden"; 
+		flipCard();
+	}
 }
 
 /*function checkReturnState() {
@@ -49,7 +65,7 @@ function previousQuestion(){
         if(previousIndex === maxPreviousIndex-1){
             previousIndex -= 1;
         }
-        
+        flipQuestion();
         document.getElementById("cardText").innerHTML = previousCard[previousIndex][0];
         document.getElementById("cardAnswerText").innerHTML = previousCard[previousIndex][1];
         previousIndex -= 1;
@@ -65,7 +81,7 @@ function nextPrevQuestion(){
         if(previousIndex === -1){
             previousIndex += 1;
         }
-        
+        flipQuestion();
         previousIndex += 1;
         document.getElementById("cardText").innerHTML = previousCard[previousIndex][0];
         document.getElementById("cardAnswerText").innerHTML = previousCard[previousIndex][1];
@@ -80,7 +96,7 @@ function selectQuestion(){
     if(previousIndex < maxPreviousIndex-1){
         nextPrevQuestion();
     }else{
-    
+		flipQuestion();
         //if the array (that keeps track of the questions that have not been used), 
         //  is empty, then repopulate with the index numbers 0 to N-1, 
         //    where N is the length of the question array
