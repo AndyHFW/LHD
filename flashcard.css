@@ -154,12 +154,12 @@ body {
 	}
 	
 	#sampleQuestions {
-		height: 80%;
-		width: 80%;
+		height: 90%;
+		width: 90%;
 	}
 	
 	#chooseFile {
-		height: 50%;
-		width: 50%;
+		height: 65%;
+		width: 65%;
 	}
 }
