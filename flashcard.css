@@ -127,8 +127,8 @@ body {
 }
 
 #sampleQuestions {
-	height: 75%;
-	width: 75%;
+	height: 50%;
+	width: 50%;
 	margin-top: 10px;
 	padding-bottom: 10px;
 	border-style: solid;
@@ -137,11 +137,29 @@ body {
 }
 
 #chooseFile {
-	height: 30%;
-	width: 30%;
+	height: 20%;
+	width: 20%;
 	padding-left: 5px;
 	padding-right: 5px;
+	margin-top: 5px;
 	border-style: solid;
 	border-color: black;
 	border-width: 1px;
+}
+
+@media only screen and (max-width: 900px) {	
+	.card div {
+		left: 10%;
+		width: 80%;
+	}
+	
+	#sampleQuestions {
+		height: 80%;
+		width: 80%;
+	}
+	
+	#chooseFile {
+		height: 50%;
+		width: 50%;
+	}
 }
